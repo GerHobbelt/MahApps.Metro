@@ -15,6 +15,7 @@ using System.Windows.Data;
 using ControlzEx.Behaviors;
 using ControlzEx.Native;
 using ControlzEx.Standard;
+using ControlzEx.Theming;
 using JetBrains.Annotations;
 using MahApps.Metro.Behaviors;
 using MahApps.Metro.Controls.Dialogs;
@@ -925,8 +926,6 @@ namespace MahApps.Metro.Controls
         /// </summary>
         public MetroWindow()
         {
-            this.CommandBindings.Add(new CommandBinding(MahAppsCommands.ClearControlCommand, (sender, args) => MahAppsCommands.ClearControl(args)));
-
             this.SetCurrentValue(MetroDialogOptionsProperty, new MetroDialogSettings());
 
             // BorderlessWindowBehavior initialization has to occur in constructor. Otherwise the load event is fired early and performance of the window is degraded.
@@ -947,8 +946,8 @@ namespace MahApps.Metro.Controls
 
             this.ResetAllWindowCommandsBrush();
 
-            ThemeManager.IsThemeChanged += ThemeManagerOnIsThemeChanged;
-            this.Unloaded += (o, args) => ThemeManager.IsThemeChanged -= ThemeManagerOnIsThemeChanged;
+            ThemeManager.Current.ThemeChanged += ThemeManagerOnIsThemeChanged;
+            this.Unloaded += (o, args) => ThemeManager.Current.ThemeChanged -= ThemeManagerOnIsThemeChanged;
         }
 
         private void InitializeWindowChromeBehavior()
@@ -1062,9 +1061,9 @@ namespace MahApps.Metro.Controls
             }
         }
 
-        private void ThemeManagerOnIsThemeChanged(object sender, OnThemeChangedEventArgs e)
+        private void ThemeManagerOnIsThemeChanged(object sender, ThemeChangedEventArgs e)
         {
-            if (e.Theme != null)
+            if (e.NewTheme != null)
             {
                 var flyouts = this.Flyouts.GetFlyouts().ToList();
                 // since we disabled the ThemeManager OnThemeChanged part, we must change all children flyouts too
@@ -1084,8 +1083,9 @@ namespace MahApps.Metro.Controls
 
                 foreach (var flyout in flyouts)
                 {
-                    flyout.ChangeFlyoutTheme(e.Theme);
+                    flyout.ChangeFlyoutTheme(e.NewTheme);
                 }
+                
                 this.HandleWindowCommandsForFlyouts(flyouts);
             }
         }

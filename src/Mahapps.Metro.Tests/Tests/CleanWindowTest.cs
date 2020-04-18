@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using System.Windows.Media;
+using ControlzEx.Theming;
 using MahApps.Metro.Tests.TestHelpers;
 using Xunit;
 
@@ -15,10 +16,10 @@ namespace MahApps.Metro.Tests
 
             var window = await WindowHelpers.CreateInvisibleWindowAsync<CleanWindow>().ConfigureAwait(false);
 
-            var theme = ThemeManager.DetectTheme();
+            var theme = ThemeManager.Current.DetectTheme();
             Assert.NotNull(theme);
 
-            var brush = theme.Resources["MahApps.Brushes.Black"] as SolidColorBrush;
+            var brush = theme.Resources["MahApps.Brushes.ThemeForeground"] as SolidColorBrush;
             Assert.NotNull(brush);
 
             var blackBrushColor = brush.Color;

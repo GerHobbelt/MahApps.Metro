@@ -62,9 +62,9 @@
                    TargetType="{x:Type ListBoxItem}">
                 <Setter Property="Controls:ItemHelper.ActiveSelectionBackgroundBrush" Value="Transparent" />
                 <Setter Property="Controls:ItemHelper.ActiveSelectionForegroundBrush" Value="{DynamicResource MahApps.Brushes.AccentBase}" />
-                <Setter Property="Controls:ItemHelper.DisabledForegroundBrush" Value="{DynamicResource MahApps.Brushes.GrayNormal}" />
+                <Setter Property="Controls:ItemHelper.DisabledForegroundBrush" Value="{DynamicResource MahApps.Brushes.Gray}" />
                 <Setter Property="Controls:ItemHelper.DisabledSelectedBackgroundBrush" Value="Transparent" />
-                <Setter Property="Controls:ItemHelper.DisabledSelectedForegroundBrush" Value="{DynamicResource MahApps.Brushes.GrayNormal}" />
+                <Setter Property="Controls:ItemHelper.DisabledSelectedForegroundBrush" Value="{DynamicResource MahApps.Brushes.Gray}" />
                 <Setter Property="Controls:ItemHelper.HoverBackgroundBrush" Value="{DynamicResource MahApps.Brushes.Gray9}" />
                 <Setter Property="Controls:ItemHelper.HoverSelectedBackgroundBrush" Value="{DynamicResource MahApps.Brushes.Gray9}" />
                 <Setter Property="Controls:ItemHelper.SelectedBackgroundBrush" Value="Transparent" />
@@ -153,7 +153,7 @@
                    TargetType="{x:Type Controls:HamburgerMenu}">
                 <Setter Property="ItemContainerStyle" Value="{StaticResource HamburgerMenuCreatorsItemStyle}" />
                 <Setter Property="OptionsItemContainerStyle" Value="{StaticResource HamburgerMenuCreatorsItemStyle}" />
-                <Setter Property="PaneBackground" Value="{DynamicResource MahApps.Brushes.White}" />
+                <Setter Property="PaneBackground" Value="{DynamicResource MahApps.Brushes.ThemeBackground}" />
                 <Setter Property="PaneForeground" Value="{DynamicResource MahApps.Brushes.Text}" />
                 <Setter Property="ShowSelectionIndicator" Value="True" />
             </Style>
@@ -176,7 +176,7 @@
             <StackPanel Margin="0 0 0 10" Orientation="Vertical">
                 <Controls:ToggleSwitch Margin="0 10 0 5"
                                        Header="IsPaneOpen:"
-                                       IsChecked="{Binding ElementName=HamburgerMenuControl, Path=IsPaneOpen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                       IsOn="{Binding ElementName=HamburgerMenuControl, Path=IsPaneOpen, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                 <Controls:MetroHeader Margin="0 10 0 5" Header="DisplayMode:">
                     <ComboBox MinWidth="150"
@@ -264,7 +264,7 @@
                                         <Controls:ToggleSwitch Margin="0 0 0 5" Header="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
                                         <Controls:ToggleSwitch Margin="0 0 0 5"
                                                                Header="Ut dictum arcu egestas aliquet elementum"
-                                                               IsChecked="True" />
+                                                               IsOn="True" />
                                         <Controls:ToggleSwitch Margin="0 0 0 5" Header="Pellentesque ultricies metus quis dui luctus, vel faucibus risus rhoncus" />
                                     </StackPanel>
                                 </UserControl>
