@@ -13,8 +13,8 @@
         <Reference Include="System.Configuration" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="ControlzEx" Version="[4.*, 5.0)" />
-        <PackageReference Include="Newtonsoft.Json" Version="12.*" PrivateAssets="All" />
+        <PackageReference Include="ControlzEx" Version="4.2.2" />
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" PrivateAssets="All" />
         <PackageReference Include="XamlColorSchemeGenerator" Version="3.0.0.31" PrivateAssets="All" />
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.*">
             <PrivateAssets>all</PrivateAssets>
@@ -44,5 +44,9 @@
     <ItemGroup>
         <Compile DependentUpon="%(Filename)" SubType="Code" Update="**\obj\**\*.g$(DefaultLanguageSourceExtension)" />
         <Compile DependentUpon="%(Filename)" SubType="Designer" Update="**\*.xaml$(DefaultLanguageSourceExtension)" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Update="JetBrains.Annotations" Version="2020.1.0" />
+      <PackageReference Update="WpfAnalyzers" Version="2.4.5" />
     </ItemGroup>
 </Project>

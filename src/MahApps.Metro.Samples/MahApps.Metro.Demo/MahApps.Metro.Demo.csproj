@@ -25,15 +25,15 @@
         <Reference Include="WindowsFormsIntegration" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="MahApps.Metro.IconPacks" Version="3.*" />
-        <PackageReference Include="MaterialDesignThemes" Version="2.*" />
-        <PackageReference Include="MaterialDesignColors" Version="1.*" />
-        <PackageReference Include="NHotkey.Wpf" Version="1.2.1" />
-        <PackageReference Include="Fody" Version="6.*">
+        <PackageReference Include="MahApps.Metro.IconPacks" Version="3.7.0" />
+        <PackageReference Include="MaterialDesignThemes" Version="3.1.0" />
+        <PackageReference Include="MaterialDesignColors" Version="1.2.3" />
+        <PackageReference Include="NHotkey.Wpf" Version="2.0.0" />
+        <PackageReference Include="Fody" Version="6.1.1">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Costura.Fody" Version="4.*" />
+        <PackageReference Include="Costura.Fody" Version="4.1.0" />
     </ItemGroup>
     <ItemGroup>
         <None Include="app.manifest" />
@@ -45,5 +45,9 @@
     <ItemGroup>
         <Compile DependentUpon="%(Filename)" SubType="Code" Update="**\obj\**\*.g$(DefaultLanguageSourceExtension)" />
         <Compile DependentUpon="%(Filename)" SubType="Designer" Update="**\*.xaml$(DefaultLanguageSourceExtension)" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Update="JetBrains.Annotations" Version="2020.1.0" />
+      <PackageReference Update="WpfAnalyzers" Version="2.4.5" />
     </ItemGroup>
 </Project>

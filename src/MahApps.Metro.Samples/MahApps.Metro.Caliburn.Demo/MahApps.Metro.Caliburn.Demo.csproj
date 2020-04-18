@@ -20,13 +20,13 @@
         <Reference Include="System.ComponentModel.Composition" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="MahApps.Metro.IconPacks" Version="3.*" />
-        <PackageReference Include="Caliburn.Micro" Version="3.*" />
-        <PackageReference Include="Fody" Version="6.*">
+        <PackageReference Include="MahApps.Metro.IconPacks" Version="3.7.0" />
+        <PackageReference Include="Caliburn.Micro" Version="3.2.0" />
+        <PackageReference Include="Fody" Version="6.1.1">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Costura.Fody" Version="4.*" />
+        <PackageReference Include="Costura.Fody" Version="4.1.0" />
     </ItemGroup>
     <ItemGroup>
         <None Include="app.manifest" />
@@ -38,5 +38,9 @@
     <ItemGroup>
         <Compile DependentUpon="%(Filename)" SubType="Code" Update="**\obj\**\*.g$(DefaultLanguageSourceExtension)" />
         <Compile DependentUpon="%(Filename)" SubType="Designer" Update="**\*.xaml$(DefaultLanguageSourceExtension)" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Update="JetBrains.Annotations" Version="2020.1.0" />
+      <PackageReference Update="WpfAnalyzers" Version="2.4.5" />
     </ItemGroup>
 </Project>
